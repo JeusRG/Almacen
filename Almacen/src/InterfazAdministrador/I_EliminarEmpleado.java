@@ -4,6 +4,7 @@ import ProgramacionAcciones.BuscarEmpleado;
 import ProgramacionAcciones.ConsultarEmpleado;
 import ProgramacionAcciones.EliminarEmpleado;
 import ProgramacionAcciones.I1_Identificador;
+import javax.swing.JOptionPane;
 
 public class I_EliminarEmpleado extends javax.swing.JFrame {
     
@@ -131,13 +132,21 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
     
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         boolean Verificador = false;
-        String Identificador = EntradaBuscador.getText();
         
-        I = new I1_Identificador();
-        Id = I.numeroBuscador(Buscador.getSelectedIndex());
+        if(!EntradaBuscador.getText().isEmpty()){
+            String Identificador = EntradaBuscador.getText();
+            
+            I = new I1_Identificador();
+            Id = I.numeroBuscador(Buscador.getSelectedIndex());     
+            EE = new EliminarEmpleado();
+            Verificador = EE.eliminarEmpleado(Identificador,Id);
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Seleccione un contacto");
+        }
         
-        EE = new EliminarEmpleado();
-        Verificador = EE.eliminarEmpleado(Identificador,Id);
+        
+        
         
         if(Verificador == true){
             MostrarTabla();

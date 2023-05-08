@@ -33,6 +33,7 @@ public class EliminarEmpleado {
                 pstmt = Con.prepareStatement("DELETE from empleados WHERE puesto='" +Identificador+ "'");
             }
             
+            
             int rs = pstmt.executeUpdate();
             if(rs > 0){
                 JOptionPane.showMessageDialog(null, "Contacto Eliminado");

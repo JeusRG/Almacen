@@ -16,6 +16,7 @@ public class ConsultarEmpleado {
     PreparedStatement pstmt;
     Connection Con;
     ResultSet rs;
+    int PosY;
     
     private DefaultTableModel establecerTitulos(){
         DTM = new DefaultTableModel();

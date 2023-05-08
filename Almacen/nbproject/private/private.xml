@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/NetBeansProjects/Almacen/src/InterfazAdministrador/I_AsignarCliente.java</file>
-            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/NetBeansProjects/Almacen/src/InterfazAdministrador/I_AgregarEmpleado.java</file>
-            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/NetBeansProjects/Almacen/src/InterfazAdministrador/I_EliminarEmpleado.java</file>
+            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/ProgramacionAcciones/ConsultarEmpleado.java</file>
+            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/InterfazAdministrador/I_EliminarEmpleado.java</file>
+            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/ProgramacionAcciones/BuscarEmpleado.java</file>
+            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/ProgramacionAcciones/EliminarEmpleado.java</file>
+            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/InterfazAdministrador/I_AsignarCliente.java</file>
+            <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/InterfazAdministrador/I_AgregarEmpleado.java</file>
         </group>
     </open-files>
 </project-private>
