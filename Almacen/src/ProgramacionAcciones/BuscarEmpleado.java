@@ -42,7 +42,7 @@ public class BuscarEmpleado {
             pstmt = CBD.Conectar().prepareStatement(sql);
             rs = pstmt.executeQuery();
             
-            Object[] Mostrar = new Object[5];
+            Object[] Mostrar = new Object[6];
 
             while(rs.next()){
 
@@ -51,6 +51,7 @@ public class BuscarEmpleado {
                 Mostrar[2] = rs.getString("apellidop");
                 Mostrar[3] = rs.getString("apellidom");
                 Mostrar[4] = rs.getString("puesto");
+                Mostrar[5] = "Hola";
                 DTM.addRow(Mostrar);
             }
         } catch (Exception ex) {
@@ -70,6 +71,7 @@ public class BuscarEmpleado {
         DTM.addColumn("APaterno");
         DTM.addColumn("AMaterno");
         DTM.addColumn("Puesto");
+        DTM.addColumn("Imagen");
         return DTM;
     }
 }

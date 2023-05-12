@@ -25,6 +25,7 @@ public class ConsultarEmpleado {
         DTM.addColumn("APaterno");
         DTM.addColumn("AMaterno");
         DTM.addColumn("Puesto");
+        DTM.addColumn("Imagen");
         return DTM;
     }
     
@@ -39,7 +40,7 @@ public class ConsultarEmpleado {
             pstmt = CBD.Conectar().prepareStatement(sql);
             rs = pstmt.executeQuery();
             
-            Object[] Mostrar = new Object[5];
+            Object[] Mostrar = new Object[6];
 
             while(rs.next()){
 
@@ -48,6 +49,7 @@ public class ConsultarEmpleado {
                 Mostrar[2] = rs.getString("apellidop");
                 Mostrar[3] = rs.getString("apellidom");
                 Mostrar[4] = rs.getString("puesto");
+                Mostrar[5] = rs.getBlob("imagen");
                 DTM.addRow(Mostrar);
                 //Modificar el modelo de la tabla;
                 //Mostrar[5] = rs.getString("contraseña");             
