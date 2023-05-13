@@ -51,7 +51,7 @@ public class BuscarEmpleado {
                 Mostrar[2] = rs.getString("apellidop");
                 Mostrar[3] = rs.getString("apellidom");
                 Mostrar[4] = rs.getString("puesto");
-                Mostrar[5] = "Hola";
+                Mostrar[5] = rs.getBlob("imagen");
                 DTM.addRow(Mostrar);
             }
         } catch (Exception ex) {

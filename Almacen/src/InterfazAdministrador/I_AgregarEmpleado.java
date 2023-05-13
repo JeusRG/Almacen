@@ -4,6 +4,10 @@ import ProgramacionAcciones.I1_AgregarEmpleado;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -12,6 +16,7 @@ import javax.swing.JFileChooser;
 public class I_AgregarEmpleado extends javax.swing.JFrame {
     
     private I1_AgregarEmpleado AE;
+    String Ruta = "";
     Icon imagenInicial;
     
     public I_AgregarEmpleado() {
@@ -281,6 +286,7 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
         boolean Verificador = false;
         String puesto = "";
         
+        FileInputStream archivofoto = null;
         Icon avatar      = EntradaImagen.getIcon();
         String nombre    = EntradaNombre.getText().toUpperCase();
         String aPaterno  = EntradaAPaterno.getText().toUpperCase();
@@ -288,6 +294,12 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
         String password1 = EntradaContraseña.getText();
         String password2 = EntradaContraseñaVerificado.getText();
         
+        try {
+            archivofoto = new FileInputStream(Ruta);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(I_AgregarEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
         if(EntradaPuesto.getSelectedIndex() == 1){
             puesto = EntradaPuesto.getSelectedItem().toString().toUpperCase();
         }
@@ -298,7 +310,7 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
         AE = new I1_AgregarEmpleado();
         
         if(EntradaPuesto.getSelectedIndex() != 0){
-            Verificador = AE.verificarDatos(imagenInicial,avatar,nombre,aPaterno,aMaterno,puesto,password1,password2);
+            Verificador = AE.verificarDatos(imagenInicial,avatar,nombre,aPaterno,aMaterno,puesto,password1,password2,archivofoto);
         }else{
             JOptionPane.showMessageDialog(null, "Campos Incompletos");
         }
@@ -321,7 +333,8 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
         
         if(ventana == JFileChooser.APPROVE_OPTION){
             File file = archivo.getSelectedFile();
-            Image foto = getToolkit().getImage(String.valueOf(file));
+            Ruta = String.valueOf(file);
+            Image foto = getToolkit().getImage(Ruta);
             foto = foto.getScaledInstance(75, 75, Image.SCALE_DEFAULT);
             EntradaImagen.setIcon(new ImageIcon(foto));
         }  

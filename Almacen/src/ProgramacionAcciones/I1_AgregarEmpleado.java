@@ -1,12 +1,12 @@
 package ProgramacionAcciones;
 
 import ConexionTemporal.ConexionBD;
+import java.io.FileInputStream;
 import java.sql.PreparedStatement;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Random;
 
 public class I1_AgregarEmpleado {
     
@@ -14,7 +14,7 @@ public class I1_AgregarEmpleado {
     PreparedStatement pstmt;
     Connection Con;
     
-    public boolean verificarDatos(Icon imagenInicial, Icon avatar, String nombre, String aPaterno, String aMaterno, String puesto, String password1, String password2) {
+    public boolean verificarDatos(Icon imagenInicial, Icon avatar, String nombre, String aPaterno, String aMaterno, String puesto, String password1, String password2, FileInputStream archivofoto) {
         //Variables
         boolean Verificador = false;
         
@@ -72,15 +72,5 @@ public class I1_AgregarEmpleado {
         //
         return Verificador;
         //
-    }
-
-/*    public int generadorNIUE() {
-        int niue = 0;
-        
-        Random rand = new Random();
-        niue = rand.nextInt(900000) + 1;
-        
-        return niue;      
-    }*/
-    
+    }    
 }
