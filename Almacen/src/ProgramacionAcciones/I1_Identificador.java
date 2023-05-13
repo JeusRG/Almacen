@@ -20,7 +20,15 @@ public class I1_Identificador {
         if(Index == 4){
             Id = 5;
         }
-        
+        if(Index == 5){
+            Id = 6;
+        }
+        if(Index == 6){
+            Id = 7;
+        }
+        if(Index == 7){
+            Id = 8;
+        }
         return Id;  
     }
 }

@@ -34,7 +34,6 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
         lbl_Titulo = new javax.swing.JLabel();
         Buscador = new javax.swing.JComboBox<>();
         EntradaBuscador = new javax.swing.JTextField();
-        Buscar = new javax.swing.JButton();
         PanelContenedor = new javax.swing.JPanel();
         Contenedor = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
@@ -57,13 +56,6 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(EntradaBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 200, 30));
-
-        Buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 30, 30));
 
         PanelContenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -185,17 +177,6 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EliminarActionPerformed
 
-    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
-        /*String Identificador = EntradaBuscador.getText();
-        
-        I = new I1_Identificador();
-        Id = I.numeroBuscador(Buscador.getSelectedIndex());
-        
-        BE = new BuscarEmpleado();
-        BE.buscarEmpleado(Identificador,Id);
-        MostrarTablaFiltrada(Identificador,Id);*/
-    }//GEN-LAST:event_BuscarActionPerformed
-
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         EntradaBuscador.setText(null);
         MostrarTabla();
@@ -232,7 +213,6 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Buscador;
-    private javax.swing.JButton Buscar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JScrollPane Contenedor;
     private javax.swing.JButton Eliminar;

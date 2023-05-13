@@ -2,8 +2,6 @@ package InterfazAdministrador;
 
 import ProgramacionAcciones.AsignarCliente;
 import ProgramacionAcciones.BuscarEmpleadoCliente;
-import ProgramacionAcciones.ConsultarCliente;
-import ProgramacionAcciones.ConsultarEmpleado;
 import ProgramacionAcciones.I1_Identificador;
 import ProgramacionAcciones.MostrarTomadoresPedido;
 import javax.swing.JOptionPane;
@@ -12,12 +10,10 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     
     private AsignarCliente AC;
     private MostrarTomadoresPedido MTP;
-    private ConsultarCliente CC;
-    private ConsultarEmpleado CE;
     private I1_Identificador I;
+    private I_MostrarCliente IMC;
     private BuscarEmpleadoCliente BEC;
     int Id = 0;
-    int Fila = 0;
     
     public I_AsignarCliente() {
         initComponents();
@@ -25,8 +21,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         MTP = new MostrarTomadoresPedido();
         MTP.mostrarPuesto();
         MostrarTablaEmpleado();
-        ContenedorTC.setVisible(false);
-        ContenedorTE.setVisible(true);
     }
 
     private void MostrarTablaFiltrada(String Identificador, int Id1){
@@ -41,10 +35,8 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         lbl_Titulo = new javax.swing.JLabel();
         Buscador = new javax.swing.JComboBox<>();
         EntradaBuscador = new javax.swing.JTextField();
-        Buscar = new javax.swing.JButton();
         ContenedorTE = new javax.swing.JScrollPane();
         TablaEmpleado = new javax.swing.JTable();
-        TomadorPedidos = new javax.swing.JButton();
         lbl_CIUN = new javax.swing.JLabel();
         EntradaCiun = new javax.swing.JTextField();
         lbl_NIUE = new javax.swing.JLabel();
@@ -60,8 +52,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         Cliente = new javax.swing.JButton();
         AsignarCliente = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
-        ContenedorTC = new javax.swing.JScrollPane();
-        TablaCliente = new javax.swing.JTable();
         lbl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,7 +69,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(EntradaBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 200, 30));
-        getContentPane().add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 30, 30));
 
         TablaEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,15 +94,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         ContenedorTE.setViewportView(TablaEmpleado);
 
         getContentPane().add(ContenedorTE, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 580, 140));
-
-        TomadorPedidos.setText("Tomadores de pedidos");
-        TomadorPedidos.setToolTipText("");
-        TomadorPedidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TomadorPedidosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TomadorPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 180, 30));
 
         lbl_CIUN.setText("CIUN");
         getContentPane().add(lbl_CIUN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
@@ -158,26 +138,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         Cancelar.setText("Cancelar");
         getContentPane().add(Cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 110, 30));
 
-        TablaCliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "NIUE", "Nombre", "APaterno", "AMaterno"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        ContenedorTC.setViewportView(TablaCliente);
-
-        getContentPane().add(ContenedorTC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 580, 280));
-
         lbl_Fondo.setToolTipText("");
         getContentPane().add(lbl_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
 
@@ -188,30 +148,10 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         TablaEmpleado.setModel(MTP.mostrarPuesto());   
     }
     
-    private void MostrarTablaCliente(){
-        TablaCliente.setModel(CC.mostrarClientes());
-    }
-    
-    private void TomadorPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TomadorPedidosActionPerformed
-        ContenedorTE.setVisible(true);
-        ContenedorTC.setVisible(false);
-        CE = new ConsultarEmpleado();
-        CE.mostrarEmpleados();
-        MostrarTablaEmpleado();
-    }//GEN-LAST:event_TomadorPedidosActionPerformed
-
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
-        ContenedorTC.setVisible(true);
-        ContenedorTE.setVisible(false);
-        EntradaCiun.setVisible(false);
-        EntradaNiue.setVisible(false);
-        EntradaNombre.setVisible(false);
-        EntradaApellidoP.setVisible(false);
-        EntradaApellidoM.setVisible(false);
-        EntradaDireccion.setVisible(false);
-        CC = new ConsultarCliente();
-        CC.mostrarClientes();
-        MostrarTablaCliente();
+        IMC = new I_MostrarCliente();
+        IMC.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ClienteActionPerformed
 
     private void EntradaBuscadorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EntradaBuscadorKeyReleased
@@ -253,26 +193,8 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     private void TablaEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaEmpleadoMouseClicked
         int PosY = TablaEmpleado.getSelectedRow();
         String niue = TablaEmpleado.getValueAt(PosY, 0).toString();
-        System.out.println(PosY + " " + niue);
         EntradaNiue.setText(niue); 
     }//GEN-LAST:event_TablaEmpleadoMouseClicked
-
-    /*TablaEmpleado.addMouseListener(new MouseAdapter(){
-    public void mouseClicked(MouseEvent e) {
-        // Obtener el índice de la fila seleccionada
-        
-
-        // Obtener los valores de las celdas en la fila seleccionada
-        String col1 = table.getValueAt(rowIndex, 0).toString();
-        String col2 = table.getValueAt(rowIndex, 1).toString();
-        String col3 = table.getValueAt(rowIndex, 2).toString();
-
-        // Imprimir los valores de las celdas en la consola
-        System.out.println("Valor de la celda 1: " + col1);
-        System.out.println("Valor de la celda 2: " + col2);
-        System.out.println("Valor de la celda 3: " + col3);
-    }
-}*/
     
     public static void main(String args[]) {
 
@@ -286,10 +208,8 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AsignarCliente;
     private javax.swing.JComboBox<String> Buscador;
-    private javax.swing.JButton Buscar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JButton Cliente;
-    private javax.swing.JScrollPane ContenedorTC;
     private javax.swing.JScrollPane ContenedorTE;
     private javax.swing.JTextField EntradaApellidoM;
     private javax.swing.JTextField EntradaApellidoP;
@@ -298,9 +218,7 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     private javax.swing.JTextField EntradaDireccion;
     private javax.swing.JTextField EntradaNiue;
     private javax.swing.JTextField EntradaNombre;
-    private javax.swing.JTable TablaCliente;
     private javax.swing.JTable TablaEmpleado;
-    private javax.swing.JButton TomadorPedidos;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lbl_ApellidoM;
     private javax.swing.JLabel lbl_ApellidoP;
