@@ -157,20 +157,14 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
             if(Id == 5){
                 Identificador = puesto;
             }*/
-            
-            
-            
-            
+
             EE = new EliminarEmpleado();
             Verificador = EE.eliminarEmpleado(Identificador,Id);
             
         }else{
             JOptionPane.showMessageDialog(null, "Seleccione un contacto");
         }
-        
-        
-        
-        
+   
         if(Verificador == true){
             MostrarTabla();
             EntradaBuscador.setText("");
