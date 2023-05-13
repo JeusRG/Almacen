@@ -1,13 +1,16 @@
 package InterfazAdministrador;
 
+import ProgramacionAcciones.AsignarCliente;
 import ProgramacionAcciones.BuscarEmpleadoCliente;
 import ProgramacionAcciones.ConsultarCliente;
 import ProgramacionAcciones.ConsultarEmpleado;
 import ProgramacionAcciones.I1_Identificador;
 import ProgramacionAcciones.MostrarTomadoresPedido;
+import javax.swing.JOptionPane;
 
 public class I_AsignarCliente extends javax.swing.JFrame {
     
+    private AsignarCliente AC;
     private MostrarTomadoresPedido MTP;
     private ConsultarCliente CC;
     private ConsultarEmpleado CE;
@@ -22,6 +25,8 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         MTP = new MostrarTomadoresPedido();
         MTP.mostrarPuesto();
         MostrarTablaEmpleado();
+        ContenedorTC.setVisible(false);
+        ContenedorTE.setVisible(true);
     }
 
     private void MostrarTablaFiltrada(String Identificador, int Id1){
@@ -55,9 +60,9 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         Cliente = new javax.swing.JButton();
         AsignarCliente = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
-        lbl_Fondo = new javax.swing.JLabel();
-        ContenedorTE1 = new javax.swing.JScrollPane();
+        ContenedorTC = new javax.swing.JScrollPane();
         TablaCliente = new javax.swing.JTable();
+        lbl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,9 +158,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         Cancelar.setText("Cancelar");
         getContentPane().add(Cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 110, 30));
 
-        lbl_Fondo.setToolTipText("");
-        getContentPane().add(lbl_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
-
         TablaCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -172,9 +174,12 @@ public class I_AsignarCliente extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        ContenedorTE1.setViewportView(TablaCliente);
+        ContenedorTC.setViewportView(TablaCliente);
 
-        getContentPane().add(ContenedorTE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 580, 140));
+        getContentPane().add(ContenedorTC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 580, 280));
+
+        lbl_Fondo.setToolTipText("");
+        getContentPane().add(lbl_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -189,15 +194,21 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     
     private void TomadorPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TomadorPedidosActionPerformed
         ContenedorTE.setVisible(true);
-        ContenedorTE1.setVisible(false);
+        ContenedorTC.setVisible(false);
         CE = new ConsultarEmpleado();
         CE.mostrarEmpleados();
         MostrarTablaEmpleado();
     }//GEN-LAST:event_TomadorPedidosActionPerformed
 
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
-        ContenedorTE1.setVisible(true);
+        ContenedorTC.setVisible(true);
         ContenedorTE.setVisible(false);
+        EntradaCiun.setVisible(false);
+        EntradaNiue.setVisible(false);
+        EntradaNombre.setVisible(false);
+        EntradaApellidoP.setVisible(false);
+        EntradaApellidoM.setVisible(false);
+        EntradaDireccion.setVisible(false);
         CC = new ConsultarCliente();
         CC.mostrarClientes();
         MostrarTablaCliente();
@@ -215,7 +226,28 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_EntradaBuscadorKeyReleased
 
     private void AsignarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarClienteActionPerformed
-        //
+        boolean Verificador = false;
+        String ciun = EntradaCiun.getText().toUpperCase();
+        int niue = Integer.parseInt(EntradaNiue.getText());
+        String nombre = EntradaNombre.getText().toUpperCase();
+        String aPaterno  = EntradaApellidoP.getText().toUpperCase();
+        String aMaterno  = EntradaApellidoM.getText().toUpperCase();
+        String direccion = EntradaDireccion.getText().toUpperCase();
+        
+        AC = new AsignarCliente();
+        
+        
+        Verificador = AC.verificarDatos(ciun,niue,nombre,aPaterno,aMaterno,direccion);
+        
+        if(Verificador == true){
+            JOptionPane.showMessageDialog(null, "Registro Exitoso");
+            EntradaCiun.setText(null);
+            EntradaNiue.setText(null);
+            EntradaNombre.setText(null);
+            EntradaApellidoP.setText(null);
+            EntradaApellidoM.setText(null);
+            EntradaDireccion.setText(null);
+        }
     }//GEN-LAST:event_AsignarClienteActionPerformed
 
     private void TablaEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaEmpleadoMouseClicked
@@ -257,8 +289,8 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     private javax.swing.JButton Buscar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JButton Cliente;
+    private javax.swing.JScrollPane ContenedorTC;
     private javax.swing.JScrollPane ContenedorTE;
-    private javax.swing.JScrollPane ContenedorTE1;
     private javax.swing.JTextField EntradaApellidoM;
     private javax.swing.JTextField EntradaApellidoP;
     private javax.swing.JTextField EntradaBuscador;

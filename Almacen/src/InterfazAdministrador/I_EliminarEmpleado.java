@@ -215,10 +215,10 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
     private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
         int PosY  = Tabla.getSelectedRow();
         niue      = Tabla.getValueAt(PosY, 0).toString();
-        nombre    = Tabla.getValueAt(PosY, 1).toString();
+        /*nombre    = Tabla.getValueAt(PosY, 1).toString();
         apellidop = Tabla.getValueAt(PosY, 2).toString();
         apellidom = Tabla.getValueAt(PosY, 3).toString();
-        puesto    = Tabla.getValueAt(PosY, 4).toString();
+        puesto    = Tabla.getValueAt(PosY, 4).toString();*/
     }//GEN-LAST:event_TablaMouseClicked
 
     public static void main(String args[]) {

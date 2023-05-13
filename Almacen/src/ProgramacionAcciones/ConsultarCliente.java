@@ -32,7 +32,7 @@ public class ConsultarCliente {
     public DefaultTableModel mostrarClientes() {
         CBD = new ConexionBD();
         Con = CBD.Conectar();
-        String sql = "Select * from clientes";
+        String sql = "Select * from cliente";
         
         try {
             establecerTitulos();   
@@ -40,16 +40,17 @@ public class ConsultarCliente {
             pstmt = CBD.Conectar().prepareStatement(sql);
             rs = pstmt.executeQuery();
             
-            Object[] Mostrar = new Object[6];
+            Object[] Mostrar = new Object[7];
 
             while(rs.next()){
 
                 Mostrar[0] = rs.getInt("niuc");
                 Mostrar[1] = rs.getString("ciun");
-                Mostrar[2] = rs.getString("nombre");
-                Mostrar[3] = rs.getString("apellidop");
-                Mostrar[4] = rs.getString("apellidom");
-                Mostrar[5] = rs.getString("direccion");
+                Mostrar[2] = rs.getString("niue");
+                Mostrar[3] = rs.getString("nombre");
+                Mostrar[4] = rs.getString("apellidop");
+                Mostrar[5] = rs.getString("apellidom");
+                Mostrar[6] = rs.getString("direccion");
                 DTM.addRow(Mostrar);
                 //Modificar el modelo de la tabla;
                 //Mostrar[5] = rs.getString("contraseña");             
