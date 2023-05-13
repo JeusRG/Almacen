@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import javax.swing.table.DefaultTableModel;
 
 public class BuscarEmpleado {
-    
+    //Clase perteneciente a la interfaz eliminar empleado
     private ConexionBD CBD = new ConexionBD();
     private DefaultTableModel DTM;
     PreparedStatement pstmt;

@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 public class EliminarEmpleado {
+    //Clase perteneciente a la interfaz eliminar empleado
     private ConexionBD CBD;
     PreparedStatement pstmt;
     Connection Con;
@@ -17,10 +18,10 @@ public class EliminarEmpleado {
         boolean Verificador = false;
         
         try{
-            if(Id == 1){
+            //if(Id == 1){
                 pstmt = Con.prepareStatement("DELETE from empleados WHERE niue='" +Integer.valueOf(Identificador)+ "'");
-            }
-            if(Id == 2){
+            //}
+            /*if(Id == 2){
                 pstmt = Con.prepareStatement("DELETE from empleados WHERE nombre='" +Identificador+ "'");
             }
             if(Id == 3){
@@ -31,7 +32,7 @@ public class EliminarEmpleado {
             }
             if(Id == 5){
                 pstmt = Con.prepareStatement("DELETE from empleados WHERE puesto='" +Identificador+ "'");
-            }
+            }*/
             
             
             int rs = pstmt.executeUpdate();

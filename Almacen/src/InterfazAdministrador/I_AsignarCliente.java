@@ -222,8 +222,7 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         int PosY = TablaEmpleado.getSelectedRow();
         String niue = TablaEmpleado.getValueAt(PosY, 0).toString();
         System.out.println(PosY + " " + niue);
-        EntradaNiue.setText(niue);
-    
+        EntradaNiue.setText(niue); 
     }//GEN-LAST:event_TablaEmpleadoMouseClicked
 
     /*TablaEmpleado.addMouseListener(new MouseAdapter(){

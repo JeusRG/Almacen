@@ -13,6 +13,11 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
     private BuscarEmpleado BE;
     private I1_Identificador I;
     int Id = 0;
+    String niue      = "";
+    String nombre    = "";
+    String apellidop = "";
+    String apellidom = "";
+    String puesto    = "";
 
     public I_EliminarEmpleado() {
         initComponents();
@@ -85,6 +90,11 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaMouseClicked(evt);
+            }
+        });
         Contenedor.setViewportView(Tabla);
         if (Tabla.getColumnModel().getColumnCount() > 0) {
             Tabla.getColumnModel().getColumn(0).setResizable(false);
@@ -134,10 +144,31 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
         boolean Verificador = false;
         
         if(!EntradaBuscador.getText().isEmpty()){
-            String Identificador = EntradaBuscador.getText();
+            //String Identificador = EntradaBuscador.getText();
+            String Identificador = "";
             
             I = new I1_Identificador();
             Id = I.numeroBuscador(Buscador.getSelectedIndex());     
+            
+            //if(Id == 1){
+                Identificador = niue;
+            //}
+            /*if(Id == 2){
+                Identificador = nombre;
+            }
+            if(Id == 3){
+                Identificador = apellidop;
+            }
+            if(Id == 4){
+                Identificador = apellidom;
+            }
+            if(Id == 5){
+                Identificador = puesto;
+            }*/
+            
+            
+            
+            
             EE = new EliminarEmpleado();
             Verificador = EE.eliminarEmpleado(Identificador,Id);
             
@@ -180,6 +211,15 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
         BE.buscarEmpleado(Identificador,Id);
         MostrarTablaFiltrada(Identificador,Id);
     }//GEN-LAST:event_EntradaBuscadorKeyReleased
+
+    private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
+        int PosY  = Tabla.getSelectedRow();
+        niue      = Tabla.getValueAt(PosY, 0).toString();
+        nombre    = Tabla.getValueAt(PosY, 1).toString();
+        apellidop = Tabla.getValueAt(PosY, 2).toString();
+        apellidom = Tabla.getValueAt(PosY, 3).toString();
+        puesto    = Tabla.getValueAt(PosY, 4).toString();
+    }//GEN-LAST:event_TablaMouseClicked
 
     public static void main(String args[]) {
 

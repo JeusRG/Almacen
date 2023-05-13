@@ -27,7 +27,7 @@ public class I1_AgregarEmpleado {
         {
             if(password1.equals(password2))
             {
-                Verificador = agregarEmpleados(avatar,nombre,aPaterno,aMaterno,puesto,password1); 
+                Verificador = agregarEmpleados(avatar,nombre,aPaterno,aMaterno,puesto,password1,archivofoto); 
             }
             else
             {
@@ -43,7 +43,7 @@ public class I1_AgregarEmpleado {
         //
     }
 
-    public boolean agregarEmpleados(Icon avatar, String nombre, String aPaterno, String aMaterno, String puesto, String password1) {
+    public boolean agregarEmpleados(Icon avatar, String nombre, String aPaterno, String aMaterno, String puesto, String password1,FileInputStream archivofoto) {
         //Realizamos la conexion a la BD
         CBD = new ConexionBD();
         Con = CBD.Conectar();
@@ -52,7 +52,7 @@ public class I1_AgregarEmpleado {
         
         //Ingresamos datos del empleado a una base de datos
         try{
-            pstmt = Con.prepareStatement("INSERT INTO empleados(nombre,apellidop,apellidom,puesto,contra) VALUES(?,?,?,?,?)");
+            pstmt = Con.prepareStatement("INSERT INTO empleados(nombre,apellidop,apellidom,puesto,contra,imagen) VALUES(?,?,?,?,?,?)");
             
             //pstmt.setInt(1,generadorNIUE());
             pstmt.setString(1, nombre);
@@ -60,6 +60,7 @@ public class I1_AgregarEmpleado {
             pstmt.setString(3, aMaterno);
             pstmt.setString(4, puesto);
             pstmt.setString(5, password1);
+            pstmt.setBlob(6,archivofoto);
             pstmt.executeUpdate();
             
             Verificador = true;

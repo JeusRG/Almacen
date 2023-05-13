@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 public class ConsultarEmpleado {
-    
+    //Clase perteneciente a la interfaz eliminar empleado
     private ConexionBD CBD = new ConexionBD();
     private DefaultTableModel DTM;
     PreparedStatement pstmt;

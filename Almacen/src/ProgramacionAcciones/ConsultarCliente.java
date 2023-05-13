@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 public class ConsultarCliente {
-
+    //Clase perteneciente a la interfaz asignar cliente
     private ConexionBD CBD = new ConexionBD();
     private DefaultTableModel DTM;
     PreparedStatement pstmt;
@@ -20,7 +20,8 @@ public class ConsultarCliente {
     private DefaultTableModel establecerTitulos(){
         DTM = new DefaultTableModel();
         DTM.addColumn("NIUC");
-        DTM.addColumn("CIUN");
+        DTM.addColumn("CIUN"); 
+        DTM.addColumn("NIUE"); 
         DTM.addColumn("nombre");
         DTM.addColumn("APaterno");
         DTM.addColumn("AMaterno");

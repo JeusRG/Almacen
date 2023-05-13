@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import javax.swing.table.DefaultTableModel;
 
+//clase perteneciente a la interfaz asignar cliente
+
 public class BuscarEmpleadoCliente {
     private ConexionBD CBD = new ConexionBD();
     private DefaultTableModel DTM;
