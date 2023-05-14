@@ -12,6 +12,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class I_AgregarEmpleado extends javax.swing.JFrame {
     
@@ -328,7 +329,9 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
     private void EntradaImagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntradaImagenMouseClicked
         JFileChooser archivo = new JFileChooser();
         File ruta = new File("C:\\Users\\Jeus RG\\OneDrive\\Escritorio\\Avatars");
+        archivo.setFileFilter(new FileNameExtensionFilter("Archivo de imagen","png","jpg","jpeg","docs"));
         archivo.setCurrentDirectory(ruta);
+        
         int ventana = archivo.showOpenDialog(null);
         
         if(ventana == JFileChooser.APPROVE_OPTION){
