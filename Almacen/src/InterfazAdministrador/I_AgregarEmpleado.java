@@ -329,7 +329,7 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
     private void EntradaImagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntradaImagenMouseClicked
         JFileChooser archivo = new JFileChooser();
         File ruta = new File("C:\\Users\\Jeus RG\\OneDrive\\Escritorio\\Avatars");
-        archivo.setFileFilter(new FileNameExtensionFilter("Archivo de imagen","png","jpg","jpeg","docs"));
+        archivo.setFileFilter(new FileNameExtensionFilter("Archivo de imagen","png","jpg","jpeg"));
         archivo.setCurrentDirectory(ruta);
         
         int ventana = archivo.showOpenDialog(null);
