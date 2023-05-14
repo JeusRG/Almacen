@@ -10,18 +10,6 @@
             <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/InterfazAdministrador/I_AsignarCliente.java</file>
             <file>file:/C:/Users/Jeus%20RG/OneDrive/Documentos/GitHub/Almacen/Almacen/src/InterfazAdministrador/I_AgregarEmpleado.java</file>
         </group>
-        <group name="UV_POO_JJRG">
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/EliminarEmpleado.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/ConsultarCliente.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/BuscarEmpleadoCliente.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/MostrarTomadoresPedido.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/InterfazAdministrador/I_EliminarEmpleado.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/BuscarEmpleado.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/ConsultarEmpleado.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/InterfazAdministrador/I_AgregarEmpleado.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/I1_AgregarEmpleado.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/ProgramacionAcciones/I1_Identificador.java</file>
-            <file>file:/C:/Users/letty/OneDrive/Documentos/NetBeansProjects/Almacen/Almacen/src/InterfazAdministrador/I_AsignarCliente.java</file>
-        </group>
+        <group name="UV_POO_JJRG"/>
     </open-files>
 </project-private>
