@@ -1,17 +1,12 @@
 package ProgramacionAcciones;
 
 import ConexionTemporal.ConexionBD;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.sql.Connection;
-import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
@@ -56,7 +51,7 @@ public class ConsultarEmpleado {
                 Mostrar[3] = rs.getString("apellidom");
                 Mostrar[4] = rs.getString("puesto");
                 
-                Blob blob = (Blob) rs.getBlob(7);   
+                /*Blob blob = (Blob) rs.getBlob(7);   
                 byte[] data = blob.getBytes(1,(int) blob.length());
                 BufferedImage img = null;
                 
@@ -65,9 +60,9 @@ public class ConsultarEmpleado {
                 }catch(Exception Ex){
                     
                 }
-                ImageIcon icono = new ImageIcon(img);
+                ImageIcon icono = new ImageIcon(img);*/
                 
-                Mostrar[5] = new JLabel(icono);
+                Mostrar[5] = new JLabel(/*icono*/);
                 
                 DTM.addRow(Mostrar);            
             }
