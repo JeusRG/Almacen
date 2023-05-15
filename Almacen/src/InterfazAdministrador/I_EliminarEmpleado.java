@@ -37,6 +37,7 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
         PanelContenedor = new javax.swing.JPanel();
         Contenedor = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         Cancelar = new javax.swing.JButton();
         Eliminar = new javax.swing.JButton();
         lbl_Fondo = new javax.swing.JLabel();
@@ -64,14 +65,14 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NIUE", "Nombre", "APaterno", "AMaterno", "Puesto", "Imagen"
+                "NIUE", "Nombre", "APaterno", "AMaterno", "Puesto"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -97,7 +98,10 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
             Tabla.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        PanelContenedor.add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 270));
+        PanelContenedor.add(Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 270));
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PanelContenedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 120, 120));
 
         getContentPane().add(PanelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 580, 270));
 
@@ -214,6 +218,7 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField EntradaBuscador;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JTable Tabla;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Fondo;
     private javax.swing.JLabel lbl_Titulo;
     // End of variables declaration//GEN-END:variables
