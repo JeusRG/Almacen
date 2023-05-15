@@ -1,12 +1,18 @@
 package ProgramacionAcciones;
 
 import ConexionTemporal.ConexionBD;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.sql.Connection;
+import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 public class ConsultarEmpleado {
@@ -49,11 +55,22 @@ public class ConsultarEmpleado {
                 Mostrar[2] = rs.getString("apellidop");
                 Mostrar[3] = rs.getString("apellidom");
                 Mostrar[4] = rs.getString("puesto");
-                Mostrar[5] = rs.getBlob("imagen");
-                DTM.addRow(Mostrar);
-                //Modificar el modelo de la tabla;
-                //Mostrar[5] = rs.getString("contraseña");             
-            }       
+                
+                Blob blob = (Blob) rs.getBlob(7);   
+                byte[] data = blob.getBytes(1,(int) blob.length());
+                BufferedImage img = null;
+                
+                try{
+                    img = ImageIO.read(new ByteArrayInputStream(data));
+                }catch(Exception Ex){
+                    
+                }
+                ImageIcon icono = new ImageIcon(img);
+                
+                Mostrar[5] = new JLabel(icono);
+                
+                DTM.addRow(Mostrar);            
+            }
         } catch (SQLException ex) {
             Logger.getLogger(ConsultarEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }finally{

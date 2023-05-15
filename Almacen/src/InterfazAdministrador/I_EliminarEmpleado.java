@@ -64,14 +64,14 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NIUE", "Nombre", "APaterno", "AMaterno", "Puesto"
+                "NIUE", "Nombre", "APaterno", "AMaterno", "Puesto", "Imagen"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -125,7 +125,8 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void MostrarTabla(){
-        Tabla.setModel(CE.mostrarEmpleados());      
+        Tabla.setModel(CE.mostrarEmpleados());   
+        Tabla.setRowHeight(65);
     }
     
     private void MostrarTablaFiltrada(String Identificador, int Id1){
