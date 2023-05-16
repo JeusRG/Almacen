@@ -32,7 +32,7 @@ public class ConsultarCliente {
     public DefaultTableModel mostrarClientes() {
         CBD = new ConexionBD();
         Con = CBD.Conectar();
-        String sql = "Select * from cliente";
+        String sql = "Select * from clientes";
         
         try {
             establecerTitulos();   

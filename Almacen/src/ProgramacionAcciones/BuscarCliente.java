@@ -22,25 +22,25 @@ public class BuscarCliente {
         String sql = "";
         
         if(Id == 1){
-            sql = "Select * from cliente where niuc LIKE '"+Identificador+"%'";
+            sql = "Select * from clientes where niuc LIKE '"+Identificador+"%'";
         }
         if(Id == 2){
-            sql = "Select * from cliente where ciun LIKE '"+Identificador+"%'";
+            sql = "Select * from clientes where ciun LIKE '"+Identificador+"%'";
         }
         if(Id == 3){
-            sql = "Select * from cliente where niue LIKE '"+Identificador+"%'";
+            sql = "Select * from clientes where niue LIKE '"+Identificador+"%'";
         }
         if(Id == 4){
-            sql = "Select * from cliente where nombre LIKE '"+Identificador+"%'";
+            sql = "Select * from clientes where nombre LIKE '"+Identificador+"%'";
         }
         if(Id == 5){
-            sql = "Select * from cliente where apellidop LIKE '"+Identificador+"%'";
+            sql = "Select * from clientes where apellidop LIKE '"+Identificador+"%'";
         }
         if(Id == 6){
-            sql = "Select * from cliente where apellidom LIKE '"+Identificador+"%'";
+            sql = "Select * from clientes where apellidom LIKE '"+Identificador+"%'";
         }
         if(Id == 7){
-            sql = "Select * from cliente where direccion LIKE '"+Identificador+"%'";
+            sql = "Select * from clientes where direccion LIKE '"+Identificador+"%'";
         }
         
         try {

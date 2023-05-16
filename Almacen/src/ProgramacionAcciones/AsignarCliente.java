@@ -37,7 +37,7 @@ public class AsignarCliente {
         
         //Ingresamos datos del empleado a una base de datos
         try{
-            pstmt = Con.prepareStatement("INSERT INTO cliente(ciun,niue,nombre,apellidop,apellidom,direccion) VALUES(?,?,?,?,?,?)");
+            pstmt = Con.prepareStatement("INSERT INTO clientes(ciun,niue,nombre,apellidop,apellidom,direccion) VALUES(?,?,?,?,?,?)");
             
             pstmt.setString(1, ciun);
             pstmt.setInt(2, niue);
