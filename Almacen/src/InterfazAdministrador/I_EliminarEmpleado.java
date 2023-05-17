@@ -2,14 +2,14 @@ package InterfazAdministrador;
 
 import ProgramacionAcciones.BuscarEmpleado;
 import ProgramacionAcciones.ConsultarEmpleado;
-import ProgramacionAcciones.EliminarEmpleado;
+import ProgramacionAcciones.EliminarEmpleadoClase;
 import ProgramacionAcciones.I1_Identificador;
 import javax.swing.JOptionPane;
 
 public class I_EliminarEmpleado extends javax.swing.JFrame {
     
     private ConsultarEmpleado CE;
-    private EliminarEmpleado EE;
+    private EliminarEmpleadoClase EE;
     private BuscarEmpleado BE;
     private I1_Identificador I;
     int Id = 0;
@@ -40,7 +40,6 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Cancelar = new javax.swing.JButton();
         Eliminar = new javax.swing.JButton();
-        lbl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -122,9 +121,6 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
         });
         getContentPane().add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
 
-        lbl_Fondo.setToolTipText("");
-        getContentPane().add(lbl_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
@@ -163,7 +159,7 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
                 Identificador = puesto;
             }*/
 
-            EE = new EliminarEmpleado();
+            EE = new EliminarEmpleadoClase();
             Verificador = EE.eliminarEmpleado(Identificador,Id);
             
         }else{
@@ -219,7 +215,6 @@ public class I_EliminarEmpleado extends javax.swing.JFrame {
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JTable Tabla;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbl_Fondo;
     private javax.swing.JLabel lbl_Titulo;
     // End of variables declaration//GEN-END:variables
 }

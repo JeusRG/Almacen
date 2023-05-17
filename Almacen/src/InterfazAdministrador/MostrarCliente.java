@@ -31,11 +31,20 @@ public class MostrarCliente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Eliminar = new javax.swing.JButton();
         ContenedorTC = new javax.swing.JScrollPane();
         TablaCliente = new javax.swing.JTable();
         Buscador = new javax.swing.JComboBox<>();
         EntradaBuscador = new javax.swing.JTextField();
-        TomadorPedidos = new javax.swing.JButton();
+        Cancelar = new javax.swing.JButton();
+
+        Eliminar.setText("Eliminar");
+        Eliminar.setToolTipText("");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
 
         TablaCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,11 +72,10 @@ public class MostrarCliente extends javax.swing.JPanel {
             }
         });
 
-        TomadorPedidos.setText("Tomadores de pedidos");
-        TomadorPedidos.setToolTipText("");
-        TomadorPedidos.addActionListener(new java.awt.event.ActionListener() {
+        Cancelar.setText("Cancelar");
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TomadorPedidosActionPerformed(evt);
+                CancelarActionPerformed(evt);
             }
         });
 
@@ -75,33 +83,33 @@ public class MostrarCliente extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(EntradaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(90, 90, 90)
-                            .addComponent(TomadorPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(ContenedorTC, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(EntradaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(ContenedorTC, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(Eliminar)
+                .addGap(107, 107, 107)
+                .addComponent(Cancelar))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(EntradaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TomadorPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(10, 10, 10)
-                    .addComponent(ContenedorTC, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EntradaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(ContenedorTC, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Eliminar)
+                    .addComponent(Cancelar)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,18 +124,57 @@ public class MostrarCliente extends javax.swing.JPanel {
         MostrarTablaFiltrada(Identificador,Id);
     }//GEN-LAST:event_EntradaBuscadorKeyReleased
 
-    private void TomadorPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TomadorPedidosActionPerformed
-        IAC = new I_AsignarCliente();
-        IAC.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_TomadorPedidosActionPerformed
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        /*boolean Verificador = false;
+
+        if(!EntradaBuscador.getText().isEmpty()){
+            //String Identificador = EntradaBuscador.getText();
+            String Identificador = "";
+
+            I = new I1_Identificador();
+            Id = I.numeroBuscador(Buscador.getSelectedIndex());
+
+            //if(Id == 1){
+                Identificador = niue;
+                //}
+            /*if(Id == 2){
+                Identificador = nombre;
+            }
+            if(Id == 3){
+                Identificador = apellidop;
+            }
+            if(Id == 4){
+                Identificador = apellidom;
+            }
+            if(Id == 5){
+                Identificador = puesto;
+            }
+
+            EE = new EliminarEmpleadoClase();
+            Verificador = EE.eliminarEmpleado(Identificador,Id);
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Seleccione un contacto");
+        }
+
+        if(Verificador == true){
+            MostrarTabla();
+            EntradaBuscador.setText("");
+        }*/
+    }//GEN-LAST:event_EliminarActionPerformed
+
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
+        /*EntradaBuscador.setText(null);
+        MostrarTabla();*/
+    }//GEN-LAST:event_CancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Buscador;
+    private javax.swing.JButton Cancelar;
     private javax.swing.JScrollPane ContenedorTC;
+    private javax.swing.JButton Eliminar;
     private javax.swing.JTextField EntradaBuscador;
     private javax.swing.JTable TablaCliente;
-    private javax.swing.JButton TomadorPedidos;
     // End of variables declaration//GEN-END:variables
 }

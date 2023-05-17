@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-public class EliminarEmpleado {
+public class EliminarEmpleadoClase {
     //Clase perteneciente a la interfaz eliminar empleado
     private ConexionBD CBD;
     PreparedStatement pstmt;
