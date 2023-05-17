@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class AsignarCliente {
+public class AsignarClienteClase {
     private ConexionBD CBD;
     PreparedStatement pstmt;
     Connection Con;

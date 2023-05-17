@@ -1,6 +1,6 @@
 package InterfazAdministrador;
 
-import ProgramacionAcciones.AsignarCliente;
+import ProgramacionAcciones.AsignarClienteClase;
 import ProgramacionAcciones.BuscarEmpleadoCliente;
 import ProgramacionAcciones.I1_Identificador;
 import ProgramacionAcciones.MostrarTomadoresPedido;
@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class I_AsignarCliente extends javax.swing.JFrame {
     
-    private AsignarCliente AC;
+    private AsignarClienteClase AC;
     private MostrarTomadoresPedido MTP;
     private I1_Identificador I;
     private I_MostrarCliente IMC;
@@ -52,7 +52,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         Cliente = new javax.swing.JButton();
         AsignarCliente = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
-        lbl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,9 +137,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         Cancelar.setText("Cancelar");
         getContentPane().add(Cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 110, 30));
 
-        lbl_Fondo.setToolTipText("");
-        getContentPane().add(lbl_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -174,7 +170,7 @@ public class I_AsignarCliente extends javax.swing.JFrame {
         String aMaterno  = EntradaApellidoM.getText().toUpperCase();
         String direccion = EntradaDireccion.getText().toUpperCase();
         
-        AC = new AsignarCliente();
+        AC = new AsignarClienteClase();
         
         
         Verificador = AC.verificarDatos(ciun,niue,nombre,aPaterno,aMaterno,direccion);
@@ -224,7 +220,6 @@ public class I_AsignarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_ApellidoP;
     private javax.swing.JLabel lbl_CIUN;
     private javax.swing.JLabel lbl_Direccion;
-    private javax.swing.JLabel lbl_Fondo;
     private javax.swing.JLabel lbl_NIUE;
     private javax.swing.JLabel lbl_Nombre;
     private javax.swing.JLabel lbl_Titulo;

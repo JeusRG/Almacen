@@ -53,7 +53,6 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
         Ocultar1 = new javax.swing.JButton();
         Ver2 = new javax.swing.JButton();
         Ocultar2 = new javax.swing.JButton();
-        lbl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -207,9 +206,6 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Ocultar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 330, -1, -1));
-
-        lbl_Fondo.setToolTipText("");
-        getContentPane().add(lbl_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -440,7 +436,6 @@ public class I_AgregarEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_ApellidoPaterno;
     private javax.swing.JLabel lbl_Contraseña;
     private javax.swing.JLabel lbl_ContraseñaVerificador;
-    private javax.swing.JLabel lbl_Fondo;
     private javax.swing.JLabel lbl_Nombre;
     private javax.swing.JLabel lbl_Perfil;
     private javax.swing.JLabel lbl_Puesto;

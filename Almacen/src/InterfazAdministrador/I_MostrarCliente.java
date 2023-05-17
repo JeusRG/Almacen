@@ -27,7 +27,6 @@ public class I_MostrarCliente extends javax.swing.JFrame {
         Buscador = new javax.swing.JComboBox<>();
         EntradaBuscador = new javax.swing.JTextField();
         TomadorPedidos = new javax.swing.JButton();
-        lbl_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,9 +69,6 @@ public class I_MostrarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TomadorPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 180, 30));
-
-        lbl_Fondo.setToolTipText("");
-        getContentPane().add(lbl_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -144,6 +140,5 @@ public class I_MostrarCliente extends javax.swing.JFrame {
     private javax.swing.JTextField EntradaBuscador;
     private javax.swing.JTable TablaCliente;
     private javax.swing.JButton TomadorPedidos;
-    private javax.swing.JLabel lbl_Fondo;
     // End of variables declaration//GEN-END:variables
 }
