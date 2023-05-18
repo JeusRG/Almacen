@@ -2,15 +2,19 @@ package InterfazAdministrador;
 
 import ProgramacionAcciones.BuscarCliente;
 import ProgramacionAcciones.ConsultarCliente;
+import ProgramacionAcciones.EliminarClienteClase;
 import ProgramacionAcciones.I1_Identificador;
+import javax.swing.JOptionPane;
 
 public class MostrarCliente extends javax.swing.JPanel {
 
     private ConsultarCliente CC;
     private I_AsignarCliente IAC;
     private I1_Identificador I;
+    private EliminarClienteClase EC;
     private BuscarCliente BC;
     int Id = 0;
+    String niuc = "";
     
     public MostrarCliente() {
         initComponents();
@@ -60,6 +64,11 @@ public class MostrarCliente extends javax.swing.JPanel {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        TablaCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaClienteMouseClicked(evt);
             }
         });
         ContenedorTC.setViewportView(TablaCliente);
@@ -125,48 +134,39 @@ public class MostrarCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_EntradaBuscadorKeyReleased
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        /*boolean Verificador = false;
+        boolean Verificador = false;
 
-        if(!EntradaBuscador.getText().isEmpty()){
-            //String Identificador = EntradaBuscador.getText();
+        if(!niuc.isEmpty()){
+            
             String Identificador = "";
 
             I = new I1_Identificador();
             Id = I.numeroBuscador(Buscador.getSelectedIndex());
 
-            //if(Id == 1){
-                Identificador = niue;
-                //}
-            /*if(Id == 2){
-                Identificador = nombre;
-            }
-            if(Id == 3){
-                Identificador = apellidop;
-            }
-            if(Id == 4){
-                Identificador = apellidom;
-            }
-            if(Id == 5){
-                Identificador = puesto;
-            }
+            Identificador = niuc;
 
-            EE = new EliminarEmpleadoClase();
-            Verificador = EE.eliminarEmpleado(Identificador,Id);
+            EC = new EliminarClienteClase();
+            Verificador = EC.eliminarCliente(Identificador,Id);
 
         }else{
             JOptionPane.showMessageDialog(null, "Seleccione un contacto");
         }
 
         if(Verificador == true){
-            MostrarTabla();
+            MostrarTablaCliente();
             EntradaBuscador.setText("");
-        }*/
+        }
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         /*EntradaBuscador.setText(null);
         MostrarTabla();*/
     }//GEN-LAST:event_CancelarActionPerformed
+
+    private void TablaClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaClienteMouseClicked
+        int PosY  = TablaCliente.getSelectedRow();
+        niuc      = TablaCliente.getValueAt(PosY, 0).toString();
+    }//GEN-LAST:event_TablaClienteMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

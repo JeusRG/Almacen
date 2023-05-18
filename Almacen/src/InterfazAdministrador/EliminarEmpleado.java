@@ -13,11 +13,7 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     private BuscarEmpleado BE;
     private I1_Identificador I;
     int Id = 0;
-    String niue      = "";
-    String nombre    = "";
-    String apellidop = "";
-    String apellidom = "";
-    String puesto    = "";
+    String niue = "";
     
     public EliminarEmpleado() {
         initComponents();
@@ -171,10 +167,6 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
         int PosY  = Tabla.getSelectedRow();
         niue      = Tabla.getValueAt(PosY, 0).toString();
-        /*nombre    = Tabla.getValueAt(PosY, 1).toString();
-        apellidop = Tabla.getValueAt(PosY, 2).toString();
-        apellidom = Tabla.getValueAt(PosY, 3).toString();
-        puesto    = Tabla.getValueAt(PosY, 4).toString();*/
     }//GEN-LAST:event_TablaMouseClicked
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
@@ -185,28 +177,13 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         boolean Verificador = false;
 
-        if(!EntradaBuscador.getText().isEmpty()){
-            //String Identificador = EntradaBuscador.getText();
+        if(!niue.isEmpty()){
             String Identificador = "";
 
             I = new I1_Identificador();
             Id = I.numeroBuscador(Buscador.getSelectedIndex());
 
-            //if(Id == 1){
-                Identificador = niue;
-                //}
-            /*if(Id == 2){
-                Identificador = nombre;
-            }
-            if(Id == 3){
-                Identificador = apellidop;
-            }
-            if(Id == 4){
-                Identificador = apellidom;
-            }
-            if(Id == 5){
-                Identificador = puesto;
-            }*/
+            Identificador = niue;
 
             EE = new EliminarEmpleadoClase();
             Verificador = EE.eliminarEmpleado(Identificador,Id);
