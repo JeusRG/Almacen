@@ -24,7 +24,6 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     
     private void MostrarTabla(){
         Tabla.setModel(CE.mostrarEmpleados());   
-        Tabla.setRowHeight(65);
     }
     
     private void MostrarTablaFiltrada(String Identificador, int Id1){
