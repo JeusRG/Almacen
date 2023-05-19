@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 public class MostrarCliente extends javax.swing.JPanel {
 
     private ConsultarCliente CC;
-    private I_AsignarCliente IAC;
     private I1_Identificador I;
     private EliminarClienteClase EC;
     private BuscarCliente BC;
@@ -35,18 +34,23 @@ public class MostrarCliente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Eliminar = new javax.swing.JButton();
-        ContenedorTC = new javax.swing.JScrollPane();
-        TablaCliente = new javax.swing.JTable();
+        lbl_Titulo = new javax.swing.JLabel();
         Buscador = new javax.swing.JComboBox<>();
         EntradaBuscador = new javax.swing.JTextField();
+        ContenedorTC = new javax.swing.JScrollPane();
+        TablaCliente = new javax.swing.JTable();
+        Eliminar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
 
-        Eliminar.setText("Eliminar");
-        Eliminar.setToolTipText("");
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
+        setBackground(new java.awt.Color(204, 204, 255));
+
+        lbl_Titulo.setText("ASIGNAR EMPLEADOS");
+
+        Buscador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "niuc", "ciue", "niue", "nombre", "apellidop", "apellidom" }));
+
+        EntradaBuscador.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EntradaBuscadorKeyReleased(evt);
             }
         });
 
@@ -73,11 +77,11 @@ public class MostrarCliente extends javax.swing.JPanel {
         });
         ContenedorTC.setViewportView(TablaCliente);
 
-        Buscador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "niuc", "ciue", "niue", "nombre", "apellidop", "apellidom" }));
-
-        EntradaBuscador.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                EntradaBuscadorKeyReleased(evt);
+        Eliminar.setText("Eliminar");
+        Eliminar.setToolTipText("");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
             }
         });
 
@@ -92,6 +96,7 @@ public class MostrarCliente extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbl_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -109,7 +114,8 @@ public class MostrarCliente extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addComponent(lbl_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EntradaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -176,5 +182,6 @@ public class MostrarCliente extends javax.swing.JPanel {
     private javax.swing.JButton Eliminar;
     private javax.swing.JTextField EntradaBuscador;
     private javax.swing.JTable TablaCliente;
+    private javax.swing.JLabel lbl_Titulo;
     // End of variables declaration//GEN-END:variables
 }

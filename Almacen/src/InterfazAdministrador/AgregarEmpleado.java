@@ -53,6 +53,8 @@ public class AgregarEmpleado extends javax.swing.JPanel {
         Ver2 = new javax.swing.JButton();
         Ocultar2 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lbl_Titulo.setText("REGISTRAR EMPLEADOS");
 
         lbl_Perfil.setText("Avatar");
