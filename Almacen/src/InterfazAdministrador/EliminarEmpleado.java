@@ -13,14 +13,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class EliminarEmpleado extends javax.swing.JPanel {
 
+    private ConexionBD CBD = new ConexionBD();
+    private DefaultTableModel DTM;
     private ConsultarEmpleado CE;
     private EliminarEmpleadoClase EE;
     private BuscarEmpleado BE;
@@ -31,12 +31,6 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     String apellidop = "";
     String apellidom = "";
     String puesto = "";
-    private ConexionBD CBD = new ConexionBD();
-    private DefaultTableModel DTM;
-    PreparedStatement pstmt;
-    Connection Con;
-    ResultSet rs;
-    int PosY;
     
     public EliminarEmpleado() {
         initComponents();
@@ -179,6 +173,11 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_CancelarActionPerformed
 
     public void obtenerimagen(int niue){
+        
+        PreparedStatement pstmt;
+        Connection Con;
+        ResultSet rs;
+    
         ImageIcon imageIcon = null;
         CBD = new ConexionBD();
         Con = CBD.Conectar();

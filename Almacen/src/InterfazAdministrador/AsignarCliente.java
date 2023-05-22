@@ -65,6 +65,8 @@ public class AsignarCliente extends javax.swing.JPanel {
             }
         });
 
+        ContenedorTE.setBackground(new java.awt.Color(204, 204, 255));
+
         TablaEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

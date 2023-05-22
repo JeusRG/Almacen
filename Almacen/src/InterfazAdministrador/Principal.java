@@ -18,6 +18,7 @@ public class Principal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Ventanas = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -39,7 +40,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        Lateral.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 169, 48));
+        Lateral.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 169, 48));
 
         jButton4.setText("Eliminar empleado");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -47,7 +48,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        Lateral.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 169, 48));
+        Lateral.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 169, 48));
 
         jButton5.setText("Asignar cliente");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -55,7 +56,16 @@ public class Principal extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        Lateral.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 169, 48));
+        Lateral.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 169, 48));
+
+        jButton2.setText("Mostrar Clientes");
+        jButton2.setActionCommand("Agregar Clientes");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        Lateral.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 169, 48));
 
         jButton1.setText("Mostrar Clientes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +73,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        Lateral.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 169, 48));
+        Lateral.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 169, 48));
 
         getContentPane().add(Lateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 160, 540));
 
@@ -110,10 +120,9 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
         AgregarEmpleado AE = new AgregarEmpleado();
-        AE.setSize(600,400);
-        AE.setLocation(75,75);
+        AE.setSize(740,350);
+        AE.setLocation(0,95);
         
         Ventanas.removeAll();
         Ventanas.add(AE, BorderLayout.CENTER);
@@ -133,7 +142,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-  
         AsignarCliente AC = new AsignarCliente();
         AC.setSize(600,400);
         AC.setLocation(75,75);
@@ -155,6 +163,10 @@ public class Principal extends javax.swing.JFrame {
         Ventanas.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -169,6 +181,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel SalidaImagen;
     private javax.swing.JPanel Ventanas;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
