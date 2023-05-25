@@ -12,11 +12,12 @@ public class EliminarEmpleadoClase {
     Connection Con;
 
     public boolean eliminarEmpleado(String Identificador, int Id) {
+        System.out.print("Funciona antes de conectar datos");
         CBD = new ConexionBD();
         Con = CBD.Conectar();
         
         boolean Verificador = false;
-        
+        System.out.print("Funciona antes de borrar datos");
         try{
             pstmt = Con.prepareStatement("DELETE from empleados WHERE niue='" +Integer.valueOf(Identificador)+ "'");
                         

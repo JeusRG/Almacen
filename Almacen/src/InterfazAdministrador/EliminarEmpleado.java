@@ -5,7 +5,7 @@ import ProgramacionAcciones.BuscarEmpleado;
 import ProgramacionAcciones.ConsultarEmpleado;
 import ProgramacionAcciones.EliminarEmpleadoClase;
 import ProgramacionAcciones.I1_Identificador;
-import com.mysql.cj.jdbc.Blob;
+import com.mysql.jdbc.Blob;
 import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,10 +40,12 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     }
     
     private void MostrarTabla(){
+        System.out.print("Funciona mostrar tabla");
         Tabla.setModel(CE.mostrarEmpleados());   
     }
     
     private void MostrarTablaFiltrada(String Identificador, int Id1){
+        System.out.print("Funciona mostrar tabla modificada");
         Tabla.setModel(BE.buscarEmpleado(Identificador, Id));     
     }
 
@@ -140,6 +142,8 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EntradaBuscadorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EntradaBuscadorKeyReleased
+        System.out.print("Funciona enviar atributos");
+        
         String Identificador = EntradaBuscador.getText();
 
         I = new I1_Identificador();
@@ -151,6 +155,7 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_EntradaBuscadorKeyReleased
 
     private void TablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaMouseClicked
+        System.out.print("Funciona seleccionar item");
         int PosY  = Tabla.getSelectedRow();
         niue      = Tabla.getValueAt(PosY, 0).toString();
         nombre    = Tabla.getValueAt(PosY, 1).toString();
@@ -173,7 +178,7 @@ public class EliminarEmpleado extends javax.swing.JPanel {
     }//GEN-LAST:event_CancelarActionPerformed
 
     public void obtenerimagen(int niue){
-        
+        System.out.print("Funciona obtener img");
         PreparedStatement pstmt;
         Connection Con;
         ResultSet rs;

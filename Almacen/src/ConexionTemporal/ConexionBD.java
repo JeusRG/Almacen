@@ -11,7 +11,7 @@ public class ConexionBD {
     String url = "jdbc:mysql://localhost:3306/";
     String user = "root";
     String password = "";
-    String driver = "com.mysql.cj.jdbc.Driver";
+    String driver = "com.mysql.jdbc.Driver";
     Connection Con;
     
     public Connection Conectar(){

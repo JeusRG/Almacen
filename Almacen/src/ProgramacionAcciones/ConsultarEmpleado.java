@@ -14,10 +14,10 @@ public class ConsultarEmpleado {
     private ConexionBD CBD = new ConexionBD();
     private DefaultTableModel DTM;
     PreparedStatement pstmt;
-    Connection Con;
     ResultSet rs;
     
     private DefaultTableModel establecerTitulos(){
+        System.out.print("Funciona al mostrar los titulos");
         DTM = new DefaultTableModel();
         DTM.addColumn("Id");
         DTM.addColumn("Nombre");
@@ -29,10 +29,11 @@ public class ConsultarEmpleado {
     }
     
     public DefaultTableModel mostrarEmpleados() {
+        System.out.print("Funciona antes de la conexion");
         CBD = new ConexionBD();
-        Con = CBD.Conectar();
+        CBD.Conectar();
         String sql = "Select * from empleados";
-        
+        System.out.print("Funciona antes de mostrar los datos");
         try {
             establecerTitulos();   
             

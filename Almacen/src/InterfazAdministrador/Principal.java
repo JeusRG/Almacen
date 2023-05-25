@@ -7,7 +7,6 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        SalidaImagen.getIcon();
     }
 
     @SuppressWarnings("unchecked")
@@ -15,18 +14,18 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         Lateral = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        AE = new javax.swing.JButton();
+        EE = new javax.swing.JButton();
+        AC = new javax.swing.JButton();
+        MC = new javax.swing.JButton();
+        AddC = new javax.swing.JButton();
+        EC = new javax.swing.JButton();
         Ventanas = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         labelniue = new javax.swing.JLabel();
         pantallaniue = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        SalidaImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -34,46 +33,56 @@ public class Principal extends javax.swing.JFrame {
         Lateral.setBackground(new java.awt.Color(69, 114, 196));
         Lateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setText("Agregar empleado");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        AE.setText("Agregar Empleado");
+        AE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AEActionPerformed(evt);
             }
         });
-        Lateral.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 169, 48));
+        Lateral.add(AE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 169, 48));
 
-        jButton4.setText("Eliminar empleado");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        EE.setText("Eliminar Empleado");
+        EE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                EEActionPerformed(evt);
             }
         });
-        Lateral.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 169, 48));
+        Lateral.add(EE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 169, 48));
 
-        jButton5.setText("Asignar cliente");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        AC.setText("Asignar Cliente");
+        AC.setActionCommand("Asignar Cliente");
+        AC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ACActionPerformed(evt);
             }
         });
-        Lateral.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 169, 48));
+        Lateral.add(AC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 169, 48));
 
-        jButton2.setText("Mostrar Clientes");
-        jButton2.setActionCommand("Agregar Clientes");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        MC.setText("Mostrar Clientes");
+        MC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                MCActionPerformed(evt);
             }
         });
-        Lateral.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 169, 48));
+        Lateral.add(MC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 169, 48));
 
-        jButton1.setText("Mostrar Clientes");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AddC.setText("Agregar Cliente");
+        AddC.setActionCommand("Agregar Clientes");
+        AddC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AddCActionPerformed(evt);
             }
         });
-        Lateral.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 169, 48));
+        Lateral.add(AddC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 169, 48));
+
+        EC.setText("Eliminar Cliente");
+        EC.setActionCommand("Agregar Clientes");
+        EC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ECActionPerformed(evt);
+            }
+        });
+        Lateral.add(EC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 169, 48));
 
         getContentPane().add(Lateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 160, 540));
 
@@ -111,15 +120,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagen/logobimbo-tp.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 0, -1, -1));
 
-        SalidaImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(SalidaImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 5, 100, 100));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void AEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AEActionPerformed
         AgregarEmpleado AE = new AgregarEmpleado();
         AE.setSize(740,350);
         AE.setLocation(0,95);
@@ -128,9 +134,9 @@ public class Principal extends javax.swing.JFrame {
         Ventanas.add(AE, BorderLayout.CENTER);
         Ventanas.revalidate();
         Ventanas.repaint();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_AEActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void EEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EEActionPerformed
         EliminarEmpleado EE = new EliminarEmpleado();
         EE.setSize(740,540);
         EE.setLocation(0,0);
@@ -139,9 +145,9 @@ public class Principal extends javax.swing.JFrame {
         Ventanas.add(EE, BorderLayout.CENTER);
         Ventanas.revalidate();
         Ventanas.repaint();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_EEActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACActionPerformed
         AsignarCliente AC = new AsignarCliente();
         AC.setSize(600,400);
         AC.setLocation(75,75);
@@ -150,9 +156,9 @@ public class Principal extends javax.swing.JFrame {
         Ventanas.add(AC, BorderLayout.CENTER);
         Ventanas.revalidate();
         Ventanas.repaint();   
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_ACActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void MCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MCActionPerformed
         MostrarCliente MC = new MostrarCliente();
         MC.setSize(600,400);
         MC.setLocation(75,75);
@@ -161,11 +167,29 @@ public class Principal extends javax.swing.JFrame {
         Ventanas.add(MC, BorderLayout.CENTER);
         Ventanas.revalidate();
         Ventanas.repaint();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_MCActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ECActionPerformed
+        eliminar_cliente ec=new eliminar_cliente();
+        ec.setSize(740,540);
+        ec.setLocation(0, 0);
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Ventanas.removeAll();
+        Ventanas.add(ec, BorderLayout.CENTER);
+        Ventanas.revalidate();
+        Ventanas.repaint();
+    }//GEN-LAST:event_ECActionPerformed
+
+    private void AddCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCActionPerformed
+        agregar_cliente ac =new agregar_cliente();
+        ac.setSize(740,540);
+        ac.setLocation(0, 0);
+        
+        Ventanas.removeAll();
+        Ventanas.add(ac, BorderLayout.CENTER);
+        Ventanas.revalidate();
+        Ventanas.repaint();
+    }//GEN-LAST:event_AddCActionPerformed
 
     public static void main(String args[]) {
 
@@ -177,14 +201,14 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AC;
+    private javax.swing.JButton AE;
+    private javax.swing.JButton AddC;
+    private javax.swing.JButton EC;
+    private javax.swing.JButton EE;
     private javax.swing.JPanel Lateral;
-    private javax.swing.JLabel SalidaImagen;
+    private javax.swing.JButton MC;
     private javax.swing.JPanel Ventanas;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
